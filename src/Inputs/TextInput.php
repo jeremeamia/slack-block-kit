@@ -13,17 +13,17 @@ class TextInput extends InputElement
     /** @var PlainText */
     private $placeholder = '';
 
-    /** @var PlainText */
+    /** @var string */
     private $initialValue = '';
 
-    /** @var Boolean */
+    /** @var bool */
     private $multiline = false;
 
-    /** @var unsigned */
+    /** @var int */
     private $minLength;
 
-    /** @var unsigned */
-    private $maxLength = 3000;
+    /** @var int */
+    private $maxLength;
 
 
 
