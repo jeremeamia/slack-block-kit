@@ -86,8 +86,8 @@ class Button extends InputElement
     {
         $data = parent::toArray();
         $data['text'] = $this->text->toArray();
-        
-        if (!empty($this->value) {
+
+        if (!empty($this->value)) {
             $data['value'] = $this->value;
         }
 
