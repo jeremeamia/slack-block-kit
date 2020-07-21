@@ -6,6 +6,8 @@ namespace Jeremeamia\Slack\BlockKit\Surfaces;
 
 class Message extends Surface
 {
+    use AttachmentTrait;
+
     public const EPHEMERAL = 'ephemeral';
     public const IN_CHANNEL = 'in_channel';
 
