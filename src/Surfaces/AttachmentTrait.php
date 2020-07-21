@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Jeremeamia\Slack\BlockKit\Surfaces;
-
 
 trait AttachmentTrait
 {
@@ -12,7 +10,7 @@ trait AttachmentTrait
 
     public function asAttach()
     {
-        $this->attachments=['attachments' => [['color' => $this->color??'#ff000'] + parent::toArray()]];
+        $this->attachments = ['attachments' => [['color' => $this->color ?? '#ff000'] + parent::toArray()]];
         return $this->attachments;
     }
 
