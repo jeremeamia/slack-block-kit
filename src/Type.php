@@ -151,10 +151,10 @@ abstract class Type
 
         // Inputs
         Inputs\Button::class          => self::BUTTON,
-        Inputs\Checkboxes::class   => self::CHECKBOXES, // Not yet supported.
+        Inputs\Checkboxes::class      => self::CHECKBOXES, // Not yet supported.
         Inputs\DatePicker::class      => self::DATEPICKER,
         // Inputs\OverflowMenu::class => self::OVERFLOW_MENU, // Not yet supported.
-        Inputs\RadioButtons::class => self::RADIO_BUTTONS,
+        Inputs\RadioButtons::class    => self::RADIO_BUTTONS,
         Inputs\TextInput::class       => self::TEXT_INPUT,
 
         // Select Menus
