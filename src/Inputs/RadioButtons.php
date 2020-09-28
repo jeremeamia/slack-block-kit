@@ -10,7 +10,6 @@ use Jeremeamia\Slack\BlockKit\Partials\Option;
 
 class RadioButtons extends InputElement
 {
-
     use HasConfirm;
     use HasOptions;
 
@@ -25,12 +24,10 @@ class RadioButtons extends InputElement
         $hasInitial = false;
 
         foreach ($this->options as $option) {
-
             $option->validate();
 
             if ($option->isInitial()) {
-
-                if ($hasInitial)  {
+                if ($hasInitial) {
                     throw new Exception('Only one initial Option is allowed for Radio Buttons');
                 }
                 $hasInitial = true;
@@ -48,7 +45,6 @@ class RadioButtons extends InputElement
         if (count($this->options) < self::MIN_OPTIONS) {
             throw new Exception('Option Size must be at least %d', [self::MIN_OPTIONS]);
         }
-
     }
 
     /**
@@ -72,6 +68,5 @@ class RadioButtons extends InputElement
         }
 
         return $data;
-
     }
 }

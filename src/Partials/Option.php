@@ -61,7 +61,7 @@ class Option extends Element
     /**
      * @return bool
      */
-    public function  isInitial(): bool
+    public function isInitial(): bool
     {
         return $this->isInitial;
     }

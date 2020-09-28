@@ -10,7 +10,6 @@ use Jeremeamia\Slack\BlockKit\Partials\Option;
 
 class Checkboxes extends InputElement
 {
-
     use HasConfirm;
     use HasOptions;
 
@@ -33,7 +32,6 @@ class Checkboxes extends InputElement
         if (count($this->options) < self::MIN_OPTIONS) {
             throw new Exception('Option Size must be at least %d', [self::MIN_OPTIONS]);
         }
-
     }
 
     /**
@@ -56,6 +54,5 @@ class Checkboxes extends InputElement
         }
 
         return $data;
-
     }
 }

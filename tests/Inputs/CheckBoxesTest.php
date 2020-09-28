@@ -112,5 +112,4 @@ class CheckBoxesTest extends TestCase
         $input = new Checkboxes();
         $input->validate();
     }
-
 }

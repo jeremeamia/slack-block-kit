@@ -103,5 +103,4 @@ class RadioButtonsTest extends TestCase
         $input = new RadioButtons();
         $input->validate();
     }
-
 }
