@@ -29,16 +29,16 @@ $msg->newInput('c1')
 $msg->newInput('c2')
     ->label('Radio Buttons')
     ->newRadioButtons('radio_buttons')
-    ->addOption(new Option('foo', 'foo'))
-    ->addOption(new Option('bar', 'bar'), true)
-    ->addOption(new Option('foobar', 'foobar'))
+    ->option('foo', 'foo')
+    ->option('bar', 'bar', true)
+    ->option('foobar', 'foobar')
     ->setConfirm(new Confirm('Switch', 'Do you really want to switch?', 'Yes switch'));
 $msg->newInput('c3')
     ->label('Checkboxes')
     ->newCheckboxes('checkboxes')
-    ->addOption(new Option('foo', 'foo'))
-    ->addOption(new Option('bar', 'bar'), true)
-    ->addOption(new Option('foobar', 'foobar'), true)
+    ->option('foo', 'foo')
+    ->option('bar', 'bar', true)
+    ->option('foobar', 'foobar', true)
     ->setConfirm(new Confirm('Switch', 'Do you really want to switch?', 'Yes switch'));
 
 // echo Slack::newRenderer()->forJson()->render($msg) . "\n";

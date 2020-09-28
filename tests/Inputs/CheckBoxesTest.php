@@ -19,9 +19,9 @@ class CheckBoxesTest extends TestCase
     public function testCheckboxesWithConfirm()
     {
         $input = (new Checkboxes('checkboxes-identifier'))
-            ->addOption(new Option('foo', 'foo'))
-            ->addOption(new Option('bar', 'bar'), true)
-            ->addOption(new Option('foobar', 'foobar'), true)
+            ->option('foo', 'foo')
+            ->option('bar', 'bar', true)
+            ->option('foobar', 'foobar', true)
             ->setConfirm(new Confirm('Switch', 'Do you really want to switch?', 'Yes switch'));
 
         $this->assertJsonData([
@@ -92,17 +92,17 @@ class CheckBoxesTest extends TestCase
 
         $this->expectException(Exception::class);
         $input = (new Checkboxes())
-            ->addOption(new Option('foo', 'foo'))
-            ->addOption(new Option('foo', 'foo'))
-            ->addOption(new Option('foo', 'foo'))
-            ->addOption(new Option('foo', 'foo'))
-            ->addOption(new Option('foo', 'foo'))
-            ->addOption(new Option('foo', 'foo'))
-            ->addOption(new Option('foo', 'foo'))
-            ->addOption(new Option('foo', 'foo'))
-            ->addOption(new Option('foo', 'foo'))
-            ->addOption(new Option('foo', 'foo'))
-            ->addOption(new Option('foo', 'foo'));
+            ->option('foo', 'foo')
+            ->option('foo', 'foo')
+            ->option('foo', 'foo')
+            ->option('foo', 'foo')
+            ->option('foo', 'foo')
+            ->option('foo', 'foo')
+            ->option('foo', 'foo')
+            ->option('foo', 'foo')
+            ->option('foo', 'foo')
+            ->option('foo', 'foo')
+            ->option('foo', 'foo');
         $input->validate();
     }
 

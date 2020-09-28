@@ -28,7 +28,7 @@ abstract class Type
     public const DATEPICKER        = 'datepicker';
     public const TEXT_INPUT        = 'plain_text_input';
     // public const OVERFLOW_MENU  = 'overflow'; // Not yet supported.
-    public const RADIO_BUTTONS  = 'radio_buttons';
+    public const RADIO_BUTTONS     = 'radio_buttons';
 
     // Select Menus
     public const MULTI_SELECT_MENU_CHANNELS      = 'multi_channels_select';

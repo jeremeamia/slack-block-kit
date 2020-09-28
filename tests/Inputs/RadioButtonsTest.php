@@ -19,9 +19,9 @@ class RadioButtonsTest extends TestCase
     public function testRadioButtonsWithConfirm()
     {
         $input = (new RadioButtons('radio-buttons-identifier'))
-            ->addOption(new Option('foo', 'foo'))
-            ->addOption(new Option('bar', 'bar'), true)
-            ->addOption(new Option('foobar', 'foobar'))
+            ->option('foo', 'foo')
+            ->option('bar', 'bar', true)
+            ->option('foobar', 'foobar')
             ->setConfirm(new Confirm('Switch', 'Do you really want to switch?', 'Yes switch'));
 
         $this->assertJsonData([
@@ -83,17 +83,17 @@ class RadioButtonsTest extends TestCase
 
         $this->expectException(Exception::class);
         $input = (new RadioButtons())
-            ->addOption(new Option('foo', 'foo'))
-            ->addOption(new Option('foo', 'foo'))
-            ->addOption(new Option('foo', 'foo'))
-            ->addOption(new Option('foo', 'foo'))
-            ->addOption(new Option('foo', 'foo'))
-            ->addOption(new Option('foo', 'foo'))
-            ->addOption(new Option('foo', 'foo'))
-            ->addOption(new Option('foo', 'foo'))
-            ->addOption(new Option('foo', 'foo'))
-            ->addOption(new Option('foo', 'foo'))
-            ->addOption(new Option('foo', 'foo'));
+            ->option('foo', 'foo')
+            ->option('foo', 'foo')
+            ->option('foo', 'foo')
+            ->option('foo', 'foo')
+            ->option('foo', 'foo')
+            ->option('foo', 'foo')
+            ->option('foo', 'foo')
+            ->option('foo', 'foo')
+            ->option('foo', 'foo')
+            ->option('foo', 'foo')
+            ->option('foo', 'foo');
         $input->validate();
     }
 

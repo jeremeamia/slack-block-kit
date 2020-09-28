@@ -5,36 +5,26 @@ declare(strict_types=1);
 namespace Jeremeamia\Slack\BlockKit\Inputs;
 
 use Jeremeamia\Slack\BlockKit\Exception;
+use Jeremeamia\Slack\BlockKit\Partials\HasOptions;
 use Jeremeamia\Slack\BlockKit\Partials\Option;
 
 class Checkboxes extends InputElement
 {
 
     use HasConfirm;
+    use HasOptions;
 
     private const MIN_OPTIONS = 1;
     private const MAX_OPTIONS = 10;
 
-    /** @var array|Option[] */
-    private $options = [];
-
-    /** @var array|Option[] */
-    private $initialOptions = [];
-
-    public function addOption(Option $option, bool $isInitial = false): Checkboxes {
-
-        $this->options[] = $option;
-
-        if ($isInitial) {
-            $this->initialOptions[] = $option;
-        }
-
-        return $this;
-
-    }
-
     public function validate(): void
     {
+
+        $this->validateOptions();
+
+        if (!empty($this->confirm)) {
+            $this->confirm->validate();
+        }
 
         if (count($this->options) > self::MAX_OPTIONS) {
             throw new Exception('Option Size cannot exceed %d', [self::MAX_OPTIONS]);
@@ -53,11 +43,13 @@ class Checkboxes extends InputElement
     {
         $data = parent::toArray();
 
-        if (! empty($this->initialOptions)) {
-            $data['initial_options'] = $this->initialOptions;
+        foreach ($this->options as $option) {
+            if ($option->isInitial()) {
+                $data['initial_options'][] = $option->toArray();
+            }
         }
 
-        $data['options'] = $this->options;
+        $data += $this->getOptionsAsArray();
 
         if (!empty($this->confirm)) {
             $data['confirm'] = $this->confirm->toArray();
