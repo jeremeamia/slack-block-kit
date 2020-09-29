@@ -17,8 +17,11 @@ class OverflowMenu extends InputElement
 
     public function validate(): void
     {
-        if (!empty($this->placeholder)) {
-            $this->placeholder->validate();
+
+        $this->validateOptions();
+
+        if (!empty($this->confirm)) {
+            $this->confirm->validate();
         }
 
         if (count($this->options) > self::MAX_OPTIONS) {
