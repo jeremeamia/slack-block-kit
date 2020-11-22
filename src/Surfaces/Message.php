@@ -117,9 +117,11 @@ class Message extends Surface
     {
         $data = $this->directives + parent::toArray();
 
-        $data['attachments'] = [];
-        foreach ($this->attachments as $attachment) {
-            $data['attachments'][] = $attachment->toArray();
+        if ($this->attachments) {
+            $data['attachments'] = [];
+            foreach ($this->attachments as $attachment) {
+                $data['attachments'][] = $attachment->toArray();
+            }
         }
 
         if (empty($data['blocks'])) {
