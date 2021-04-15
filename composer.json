@@ -3,6 +3,7 @@
     "description": "OOP interface for writing Slack Block Kit messages",
     "type": "library",
     "license": "MIT",
+    "abandoned": "slack-php/slack-block-kit",
     "config": {
         "sort-packages": true
     },
